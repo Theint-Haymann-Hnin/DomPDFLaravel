@@ -15,12 +15,13 @@ class PDFController extends Controller
         $data = [
             'title' => 'Welcome to ItSolutionStuff.com',
             'date' => date('m/d/Y'),
-            'users' => $users
+            'users' => $users,
         ]; 
             
         $pdf = PDF::loadView('myPDF', $data);
+        $name ="theint";
      
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->download($name.'.pdf');
     } 
     public function samplePDF()
     {   

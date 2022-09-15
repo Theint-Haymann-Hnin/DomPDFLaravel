@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,10 @@ Route::get('/', function () {
 
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('/sample-pdf', [PDFController::class, 'samplePDF']);
+
+//test
+Route::get('/index', [TestController::class, 'index']);
+Route::get('/form', [TestController::class, 'create']);
+Route::post('/form/store', [TestController::class, 'store']);
+
+Route::post('/get', [TestController::class, 'test']);
